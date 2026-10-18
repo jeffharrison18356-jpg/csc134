@@ -6,6 +6,8 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cmath>
+#include <ctime>
 using namespace std;
 
 // Function prototypes (declarations)
@@ -173,8 +175,84 @@ cout << endl;
 
 void question3() {
 
+// Build a simple Choose your own adventure game
+// Give 2 options, with one leading to defeat
+// The second option leads to one more choice, with one bad and one leading to victory
+
+// Variables
+int answerq3_1,
+    answerq3_2;
+
+cout << "The cold wind and rain that's seeped through your uniform is letting up" << endl;
+cout << "You grip your longsword in your hand, and the sun's rays will reappear in a few minutes." << endl;
+cout << "You are the one remaining soldier alive, and the vampire remains alive, 10 paces away." << endl;
+cout << "The vampire cannot run." << endl;
+cout << "Will you wait for the sun to shine, or approach?" << endl;
+cout << "Type 1 to wait, 2 to approach: ";
+cin >> answerq3_1;
+
+if (answerq3_1 == 1) {
+    cout << "With pinpoint precision, the vampire throws one of the many stakes nearby directly at your chest." << endl;
+    cout << "All is lost, the vampire has escaped." << endl;
+}
+else if (answerq3_1 == 2) {
+    cout << "You stop one pace away from the vampire. He throws a wooden stake directly at your head." << endl;
+    cout << "Will you dodge or try to pin the vampire down?" << endl;
+    cout << "Type 1 to dodge, type 2 to pin down: ";
+    cin >> answerq3_2;
+
+    if (answerq3_2 == 1) {
+        cout << "You dodge the projectile." << endl;
+        cout << "When you look back to the vampire, you see only rapidly expanding red mist." << endl;
+        cout << "As the mist dissipates, you see that the sun has returned and the vampire has escaped." << endl;
+    }
+    else if ( answerq3_2 == 2) {
+        cout << "The stake flies past your helmet as you use your longsword to pin the arms of the vampire to the ground." << endl;
+        cout << "In its weakened state, it cannot escape as the sun peeks through the clouds." << endl;
+        cout << "You live a long life as the legendary sole survivor of the 11th vampire war." << endl;
+
+    }
+    else {
+        cout << "You took to long, a red mist surrounds you." << endl;
+        cout << "As it dissipates, you see that the vampire has escaped the rising sun." << endl;
+
+    }
+}
+else {
+    cout << "You took to long, a red mist surrounds you." << endl;
+    cout << "As it dissipates, you see that the vampire has escaped the rising sun." << endl;
+}
+
 }
 
 void question4() {
+
+    // Generate 2 numbers, ask for answer, state if answer is correct or not
+
+    // Generate 2 numbers
+    int seed = time(0);
+
+    srand(seed);
+
+    const int MAX = 21; 
+    int integer1, integer2, total, answerq4;
+
+    integer1 = (rand() % MAX);
+    integer2 = (rand() % MAX);
+    total = integer1 + integer2;
+
+    // Ask for answer
+    
+    cout << "What is " << integer1 << " plus " << integer2 << "?" << endl;
+    cin >> answerq4;
+
+    // State if answer is correct or not
+    if (answerq4 == total) {
+        cout << "Correct, good job." << endl;
+    }
+    else {
+        cout << "Incorrect." << endl;
+    }
+
 
 }
