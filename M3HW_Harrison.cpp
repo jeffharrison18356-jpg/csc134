@@ -1,5 +1,5 @@
 // CSC 134
-// M3HW
+// M3HW - Gold
 // Jeffrey Harrison
 // 18 October 2026
 
@@ -91,7 +91,7 @@ void question2() {
     // Declare our variables
 string  item = "🍣 Sushi";
 int answerq2;
-double item_price = 5.99;
+double item_price;
 double tax_percent = 0.08;  // this standing for 8% or 8 of 100
 double tax_amount;          // tax in dollars
 double total;               // price + tax
@@ -100,7 +100,9 @@ double dine_in_tip; //add 15% if dining in
 
 // Greet user and take the order
 cout << "Welcome to our CSC 134 Sushi Restaurant!" << endl;
-cout << "You ordered one " << item << "." << endl;
+cout << "What is the price of the sushi that you've ordered today?"<< endl;
+cout << "Total price: ";
+cin >> item_price;
 
 //Ask if dining in or out
 cout << "Will you be dining in today? Type 1 for yes and 2 for no." << endl;
@@ -234,7 +236,7 @@ void question4() {
 
     srand(seed);
 
-    const int MAX = 21; 
+    const int MAX = 9; 
     int integer1, integer2, total, answerq4;
 
     integer1 = (rand() % MAX);
